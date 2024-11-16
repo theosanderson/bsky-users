@@ -315,9 +315,9 @@ export default function Home({ initialData }) {
         <p className="text-sm xs:text-base leading-snug xs:leading-snug md:leading-normal">
           Try the{' '}
           <a href="https://bsky-follow-finder.theo.io/" className="text-sky-600 hover:underline" target="_blank" rel="noreferrer">
-            Bluesky Network Analyser
+            Bluesky Network Analyzer
           </a>
-          {' '}to find people followed by those you follow.
+          {' '}to find people to follow.
         </p>
       </footer>
     </div>

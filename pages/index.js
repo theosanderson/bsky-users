@@ -327,7 +327,7 @@ export default function Home({ initialData }) {
 
 export async function getServerSideProps(context) {
   try {
-    const url = `https://bsky-users.vercel.app/api/stats`;
+    const url = `https://bsky-users.theo.io/api/stats`;
     const response = await axios.get(url);
     return {
       props: {

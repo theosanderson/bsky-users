@@ -317,7 +317,7 @@ export default function Home({ initialData }) {
           <a href="https://bsky-follow-finder.theo.io/" className="text-sky-600 hover:underline" target="_blank" rel="noreferrer">
             Bluesky Network Analyzer
           </a>
-          {' '}to find people to follow.
+          {' '}to find people to follow, or dive into the <a href="https://firehose3d.theo.io/">firehose</a>.
         </p>
       </footer>
     </div>

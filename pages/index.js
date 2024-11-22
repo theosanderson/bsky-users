@@ -263,6 +263,26 @@ export default function Home({ initialData }) {
     return () => clearInterval(animation);
   }, [oldStats, newStats, timeOffset, transitionStartTime]);
 
+  const [embedCode, setEmbedCode] = useState('');
+
+  useEffect(() => {
+    const fetchEmbedCode = async () => {
+      try {
+        const response = await axios.get('/api/embed');
+        setEmbedCode(response.data.embedCode);
+      } catch (error) {
+        console.error('Error fetching embed code:', error);
+      }
+    };
+
+    fetchEmbedCode();
+  }, []);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(embedCode);
+    alert('Embed code copied to clipboard!');
+  };
+
   return (
     <div className="min-h-screen w-full bg-sky-50 flex flex-col items-center justify-center">
       <Head>
@@ -309,6 +329,32 @@ export default function Home({ initialData }) {
           </a>
           . Increasing by {newStats.growth_per_second.toFixed(1)}&nbsp;users per second.
         </p>
+
+        <div className="embed-section mt-10">
+          <h2 className="text-2xl font-bold text-sky-600 mb-4">Embed This Widget</h2>
+          <textarea
+            className="w-full p-2 border border-gray-300 rounded"
+            value={embedCode}
+            readOnly
+          />
+          <button
+            className="mt-2 px-4 py-2 bg-sky-600 text-white rounded hover:bg-sky-700"
+            onClick={copyToClipboard}
+          >
+            Copy Embed Code
+          </button>
+        </div>
+
+        <div className="embed-section mt-10">
+          <h2 className="text-2xl font-bold text-sky-600 mb-4">Embedded Widget</h2>
+          <iframe
+            src="https://bsky-users.theo.io/embed"
+            width="300"
+            height="200"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
       </main>
 
       <footer className="mt-6 xs:mt-8 px-2 xs:px-4 text-center text-sky-700">

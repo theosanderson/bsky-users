@@ -291,7 +291,7 @@ export default function Home({ initialData }) {
         ) : (
           <div className="bg-white sm:rounded-lg shadow-lg p-8 xs:p-8 mb-8">
             <h2 className="text-6xl xs:text-7xl font-bold text-sky-500 mb-4 tabular-nums" style={{fontKerning: "none"}}>
-              {currentCount.toLocaleString()}
+              {currentCount>0?currentCount.toLocaleString():"Data source is down"}
             </h2>
             <p className="text-lg xs:text-xl text-sky-700">Total Bluesky Users</p>
             <p className="text-xs text-sky-700 mt-1.5 -mb-2 opacity-70 hidden">+{Math.round(newStats.growth_per_second).toLocaleString()} per sec</p> 

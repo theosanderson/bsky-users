@@ -284,7 +284,7 @@ export default function Home({ initialData }) {
               Data temporarily unavailable
             </p>
             <p className="text-sm text-gray-500 mt-2">
-              Please check back in a few minutes<br />
+              <a href="https://bsky.jazco.dev/stats" className="underline">See note from Jaz</a><br />
               Last known count: {initialData.last_user_count.toLocaleString()}
             </p>
           </div>

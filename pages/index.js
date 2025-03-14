@@ -307,7 +307,7 @@ export default function Home({ initialData }) {
           <a href="https://bsky.app/profile/theo.io" className="text-sky-600 hover:underline" target="_blank" rel="noreferrer">
             @theo.io
           </a>
-          . Increasing by {newStats.growth_per_second.toFixed(1)}&nbsp;users per second.
+          . {currentCount>0 && <>Increasing by {newStats.growth_per_second.toFixed(1)}&nbsp;users per second.</>}
         </p>
       </main>
 

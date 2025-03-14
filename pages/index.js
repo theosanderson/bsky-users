@@ -285,7 +285,7 @@ export default function Home({ initialData }) {
             </p>
             <p className="text-sm text-gray-500 mt-2">
               Please check back in a few minutes<br />
-              Last known count: {currentCount.toLocaleString()}
+              Last known count: {initialData.last_user_count.toLocaleString()}
             </p>
           </div>
         ) : (
